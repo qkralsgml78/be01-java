@@ -1,20 +1,25 @@
 package Quiz.scoreClass;
 
+import java.util.Scanner;
+
 public class Score {
 	String name;
-	int kor, eng, com ,total;
-	double avg;
+	private int kor, eng, com ,total;
+	private double avg;
 	char grade;
 	
+	public Score() {
+		input();
+	}
 	
-	public Score(int kor, int eng, int com) { //생성자함수
+	public void Score(int kor, int eng, int com) { //생성자함수
 		this.kor = kor;
 		this.eng = eng;
 		this.com = com;
 	}
 	
 	
-	public Score(int total, char grade) { //생성자함수
+	public void Score(int total, char grade) { //생성자함수
 		
 		switch(total/30) {
 		case 10: case 9: grade='A'; break;
@@ -25,6 +30,23 @@ public class Score {
 		default : grade='F';
 		}
 	}
+	
+	public int getTot() {
+		this.total = kor+eng+com;
+		return total;
+	}
+	
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("kor = ");
+		this.kor= kor;
+		System.out.println("eng = ");
+		this.eng= eng;
+		System.out.println("com = ");
+		this.com= com;
+		
+	}
+	
 	
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
@@ -53,7 +75,7 @@ public class Score {
 	
 	public void disp() {
 		System.out.print("\n***********"+name+"의 성적표********\n");
-		System.out.print("kor = "+kor+"\teng = "+eng+"\tcom = "+com+"\n");
+		System.out.printf("kor = %d, eng = %d, com = %d \n",kor, eng, com);
 		System.out.printf("총점은 %d,\t평균은 %.2f,\t성적은 %c",total, avg, grade );
 	}
 	

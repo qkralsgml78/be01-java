@@ -10,6 +10,7 @@ public class MainEntry {
 		
 		sc.setName("박민희");
 		sc.setK(45);
+		
 		sc.setE(73);
 		sc.setC(83);
 		
@@ -19,9 +20,12 @@ public class MainEntry {
 		
 		sc.setA(sc.getT());
 		
-		
-		
 		sc.disp();
+		
+		Score sc2 = new Score();
+		
+		sc2.input();
+		sc2.disp();
 		
 	}
 

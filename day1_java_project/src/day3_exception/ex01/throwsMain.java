@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class throwsMain {
 	public static void main(String[] args) {
 		//throws ArithmeticException, InputMismatchException{// 예외처리 위임
-			throws Exception{
+		throws Exception{
 				
 				//시스템이 내뱉는 오류와 JVM이 내뱉는 오류가 다르기에 예외처리를 하는 것
 	

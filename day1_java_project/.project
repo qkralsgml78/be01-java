@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/day_8/Pay.class</name>
+			<type>1</type>
+			<locationURI>PARENT-3-WORKSPACE_LOC/Users/Playdata/Downloads/Pay.class</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

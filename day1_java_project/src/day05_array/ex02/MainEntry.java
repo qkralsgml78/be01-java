@@ -10,7 +10,7 @@ public class MainEntry {
 		System.out.println("열의 길이"+a[1].length);
 		
 		
-		for (int i = 0; i < a.; i++) { //행
+		for (int i = 0; i < a.length; i++) { //행
 			for (int j = 0; j < 3; j++) { //열
 				System.out.print(a[i][j] + "\t");
 				
