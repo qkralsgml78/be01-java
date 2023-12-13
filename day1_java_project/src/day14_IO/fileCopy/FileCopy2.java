@@ -1,0 +1,39 @@
+package day14_IO.fileCopy;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+//byte보다 효율적인 방법
+public class FileCopy2 {
+	public static void main(String[] args) throws IOException{ //예외처리 위임
+		//읽기 객체 - fileInputStream
+		
+		InputStream is = new FileInputStream("알고리즘.png");
+		
+		byte[] buffer = new byte[1024*8]; // 작업 속도를 매우 빠르게 증가시킨다.
+		
+		//쓰기 객체 - fileOutputStream
+		OutputStream os = new FileOutputStream("C:\\Users\\Playdata\\OneDrive\\바탕 화면\\suji.png");
+		
+		long start = System.currentTimeMillis();
+		
+		while(true) {
+			int inputData = is.read(buffer);//버퍼크기 만큼 읽어드림
+			if(inputData == -1) break;
+			os.write(buffer, 0, inputData); //버퍼사이즈만큼 입력된 데이터를 써줘
+		}
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.println(end - start);
+		//byte단위로 사진을 하나한 뜯어서 복사를 했기 때문에 시간이 오래 걸린 것
+		is.close();
+		os.close();
+		
+		System.out.println("copy success");
+	}
+
+}
